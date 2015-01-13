@@ -1,0 +1,94 @@
+<!-- 
+MyEdit Project File
+-->
+<project version="2.2" type="PythonProject" name="chassis_clear">
+
+    <!--     
+    Environment for this project
+    -->
+
+    <env eolMode="CRLF" backupDir="./bak" dir="C:\home\chrish\work\robot_utils"/>
+
+    <!--     
+    Editor build commands mapped to function keys
+    -->
+
+    <build_cmds>
+        <cmd cmd="cmd /c pmake.bat" type="build"/>
+        <cmd cmd="cmd /c pmake.bat clean all" type="rebuild"/>
+        <cmd cmd="cmd /c runit26.bat -p -d . " type="execute"/>
+        <cmd cmd="cmd /c winpdb.bat " type="debug"/>
+        <cmd cmd="cmd /c pmake.bat %s" type="build_unit"/>
+        <cmd cmd="cmd /c pmake.bat clean %s" type="rebuild_unit"/>
+        <cmd cmd="cmd /c runit26.bat -p -d . %s" type="execute_unit"/>
+        <cmd cmd="cmd /c winpdb.bat %s" type="debug_unit"/>
+    </build_cmds>
+
+
+    <!--     
+    Source Control
+    -->
+    <source_control_cmds>
+        <cmd cmd='python C:/bin/mycvs.py add "$file_dir"' type="add"/>
+        <cmd cmd="python C:/bin/mycvs.py cf $file_dir" type="check"/>
+        <cmd cmd='python C:/bin/mycvs.py ci -m "$msg" $file_dir' type="checkin"/>
+        <cmd cmd="python C:/bin/mycvs.py up $file_dir" type="update"/>
+    </source_control_cmds>
+
+
+    <!--     
+    Per Project Configuration
+    -->
+    <project_configuration/>
+
+    <!--     
+    Files in project
+    -->
+    <files>
+        <!--         
+        path is only required field
+        -->
+
+        <!-- &lt;file path="C:/bin/pylib/pylib/filter.py" file_cat="None" view="text" type="py" name="filter.py" prop=""/&gt; -->
+        <file name="chassis_clear.py" file_cat="None" uri="None" prop="" path="chassis_clear.py" type="py" view="text"/>
+    </files>
+
+
+    <!--     
+    Subprojects within this project
+    -->
+    <projects>
+        <!-- &lt;sub_proj pathname=""/&gt; -->
+        <sub_proj pathname="c:\bin\pylib\pylib\pylib.mpj"/>
+    </projects>
+
+
+    <!--     
+    Organizational display
+    -->
+    <categories>
+        <!--         
+        path is filter applied in file order
+        order is display order [1:-1]
+        -->
+
+        <!-- &lt;file_cat order="" name="" path=""/&gt; -->
+        <file_cat path="*.py" order="0" name="Source"/>
+        <file_cat path="*" order="0" name="Misc"/>
+    </categories>
+
+    <tools>
+        <tool path="C:\python26\scripts\xrced.bat" help="XML Resource Editor" desc="XRCed"/>
+        <tool path="C:\Program Files\TortoiseSVN\bin\TortoiseMerge.exe" help="File Differencer" desc="Diff"/>
+    </tools>
+
+    <helpFiles>
+        <helpfile path="C:\bin\pylib\pylib\html\index.html" help="chrish's pylib" desc="PyLib"/>
+        <helpfile path="C:\help\python26.chm.lnk" help="" desc="Python 2.6"/>
+        <helpfile path="C:\help\wxPython28.chm.lnk" help="" desc="wxPython"/>
+    </helpFiles>
+
+    <tools/>
+    <plugins/>
+</project>
+
